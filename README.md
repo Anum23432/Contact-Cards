@@ -70,7 +70,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### Live Link
-https://github.com/Anum23432/Contact-Cards/settings/pages
+https://anum23432.github.io/Contact-Cards/
 
 ### Repo Link
 https://github.com/Anum23432/Contact-Cards
