@@ -1,17 +1,34 @@
-import React from 'react';
-import Main from './components/Main';
 import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import React, {useState, useEffect} from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Main from './components/Main';
 
+const App = () => {
+  const [users, setUsers] = useState([]);
 
-function App() {
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=5")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setUsers(data.results);
+      });
+  }, [])
+
   return (
-    
-    <div className="App">
-      <h1 className='text-center' >  Contact-List </h1>
-      <Main></Main>
-      
-    </div>
+    <>
+    <h1>Contact List</h1>
+      {users.map(user => (
+        <Main
+          image={user.picture.large}
+          name={user.name.first + "" + user.name.last}
+          email={user.email}
+          nationality={user.nat}
+          age={user.dob.age}
+        />
+      ))}
+    </>
   );
 }
 
